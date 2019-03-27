@@ -35,6 +35,7 @@ import sys
 import tempfile
 import time
 
+from absl import flags
 from six.moves import urllib
 
 CHUNK_BYTE_SIZE = 65536
