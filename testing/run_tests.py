@@ -35,8 +35,9 @@ def main():
       print('**** %s ****\n' % test)
       proc = subprocess.Popen(['python', '-m', test], stderr=subprocess.PIPE)
       _, err = proc.communicate()
+      err = err.decode()
       print(err)
-      failed = FAILED_RE.search(err)
+      failed = FAILED_RE.search(str(err))
       if failed:
         results['errors'] += int(failed.group(1))
       results['codes'][proc.returncode] = results['codes'].setdefault(
