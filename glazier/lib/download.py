@@ -40,6 +40,8 @@ from six.moves import urllib
 
 CHUNK_BYTE_SIZE = 65536
 
+FLAGS = flags.FLAGS
+
 
 def Transform(string, build_info):
   """Transforms abbreviated file names to absolute file paths.
